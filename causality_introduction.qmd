@@ -21,7 +21,7 @@ format:
 :::: {.columns} 
 
 ::: {.column width="50%"}
-[Beatriz Silveira]{.custom-subtitle3}<br>
+[Beatriz Lima Silveira]{.custom-subtitle3}<br>
 :::
 
 ::: {.column width="50%"}
@@ -33,7 +33,7 @@ format:
 <br>
 
 ::: {.title-footer}
-Slides disponíveis em [GitHub](https://github.com/vitoria-sesana/UFES2025-PNAD)
+Slides disponíveis em [GitHub](https://github.com/beatriz-ls/causality_introduction)
 
 :::
 
