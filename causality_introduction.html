@@ -350,12 +350,210 @@
 <li>Porque estudar Inferência Causal?</li>
 <li>A Escada da Causalidade</li>
 <li>O Modelo Causal</li>
-<li></li>
+<li>Entendendo Intervenções e Contrafactuais</li>
+<li>Por fim, qual a diferença entre Inferencia Tradicional e a Inferência Causal?</li>
+<li>Materiais de estudo notórios</li>
+<li>Referências</li>
+<li>Agradecimentos</li>
 </ul>
+</div>
+</section>
+<section id="porque-estudar" class="slide level2" data-menu-title="Porque estudar Inferência Causal?">
+<h2></h2>
+<p><span class="slide-title">Porque estudar Inferência Causal?</span></p>
+<p><span class="custom-subtitle2">O Paradoxo de Simpson</span></p>
+<hr>
+<p>Observamos em 700 pacientes três variáveis binárias:</p>
+<ul>
+<li><span class="math inline">\(T\)</span>: recebeu tratamento</li>
+<li><span class="math inline">\(C\)</span>: curou</li>
+<li><span class="math inline">\(Z\)</span>: variável binária que será definida depois</li>
+</ul>
+<p>A tabela abaixo resume os dados:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table>
+<caption>Frequência conjunta das variáveis <span class="math inline">\(Z\)</span>, <span class="math inline">\(T\)</span> e <span class="math inline">\(C\)</span></caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Z</th>
+<th style="text-align: right;">T</th>
+<th style="text-align: right;">Não Curou (C=0)</th>
+<th style="text-align: right;">Curou (C=1)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">234</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">81</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">55</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">192</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </section>
 <section class="slide level2">
 
+<p><span class="slide-title">Porque estudar Inferência Causal?</span></p>
+<p><span class="custom-subtitle2">O Paradoxo de Simpson</span></p>
+<hr>
+<div class="sanchez-font">
+<div class="red-text">
+<p>Análise Estratificada</p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<div class="body-text-s">
+<ul>
+<li>Para <span class="math inline">\(Z = 0\)</span>: <span class="math display">\[ P(C=1 | T=1, Z=0) \approx \frac{81}{87} \approx 0.93 \]</span> <span class="math display">\[ P(C=1 | T=0, Z=0) \approx \frac{234}{270} \approx 0.87 \]</span></li>
+<li>Para <span class="math inline">\(Z = 1\)</span>: <span class="math display">\[ P(C=1 | T=1, Z=1) \approx \frac{192}{263} \approx 0.73 \]</span> <span class="math display">\[ P(C=1 | T=0, Z=1) \approx \frac{55}{80} \approx 0.69 \]</span></li>
+</ul>
+</div>
+</div><div class="column">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Conclusão</strong></p>
+</div>
+<div class="callout-content">
+<p>Para todos valores de <strong>Z</strong>, a taxa de recuperação é maior dentre aqueles que receberam tratamento do que sem ele.</p>
+<p>Podemos afirmar que tratamento é efetivo na recuperação do paciente?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p><span class="slide-title">Porque estudar Inferência Causal?</span></p>
+<p><span class="custom-subtitle2">O Paradoxo de Simpson</span></p>
+<hr>
+<div class="sanchez-font">
+<div class="red-text">
+<p>Análise Agregada</p>
+</div>
+</div>
+<div class="columns">
+<div class="column">
+<div class="body-text-s">
+<ul>
+<li>Tratamento:</li>
+</ul>
+<p><span class="math display">\[P(C = 1 \mid T = 1) = \frac{81 + 192}{6 + 81 + 192 + 71} \approx 0{,}78\]</span></p>
+<ul>
+<li>Sem Tratamento:</li>
+</ul>
+<p><span class="math display">\[P(C = 1 \mid T = 0) = \frac{234 + 55}{36 + 234 + 25 + 55} \approx 0{,}83\]</span></p>
+</div>
+</div><div class="column">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Conclusão</strong></p>
+</div>
+<div class="callout-content">
+<p>Sem estratificar por <span class="math inline">\(Z\)</span>, a frequência de recuperação é maior entre aqueles que não receberam o tratamento do que dentre aqueles que o receberam.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p><span class="slide-title">Porque estudar Inferência Causal?</span></p>
+<p><span class="custom-subtitle2">O Paradoxo de Simpson</span></p>
+<hr>
+<div class="sanchez-font">
+<div class="red-text">
+<p>Conflito nas Conclusões</p>
+</div>
+</div>
+<div class="body-text-s">
+<div class="columns">
+<div class="column">
+<p><span class="purple-text">Cenário 1:</span> <strong>Z</strong> = Sexo</p>
+<p>Z: Indicadora de que o paciente é homem</p>
+<p>Mais homens receberam o tratamento</p>
+<p>Suposição: sexo não é afetado pelo tratamento</p>
+<p>Comparação agregada:</p>
+<p>Homens tratados × Mulheres não tratadas</p>
+<p>Mulheres têm maior chance de recuperação</p>
+<p>Taxa de recuperação menor no grupo tratado é explicada pelo sexo</p>
+<p>📌 Conclusão: Tratamento parece efetivo quando estratificamos por sexo.</p>
+</div><div class="column">
+<p><span class="purple-text">Cenário 2:</span> <strong>Z</strong> = Pressão Alta</p>
+<ul>
+<li><p>Z: Indicadora de que o paciente tem pressão elevada</p></li>
+<li><p>Tratamento aumenta a pressão como efeito colateral</p></li>
+<li><p>Mais pacientes com pressão alta estão no grupo tratado</p></li>
+<li><p>Comparações dentro dos grupos de pressão:</p></li>
+<li><p>Tratamento parece benéfico</p></li>
+</ul>
+<p>Mas na análise agregada:</p>
+<p>Frequência de recuperação é maior sem tratamento</p>
+<p>📌 Conclusão: Tratamento parece ineficiente devido ao efeito colateral.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="escada" class="slide level2" data-menu-title="Escada da Causalidade">
+<h2></h2>
+<p><span class="slide-title">Escada da Causalidade</span></p>
+<hr>
+</section>
+<section id="modelo-causal" class="slide level2" data-menu-title="O Modelo Causal">
+<h2></h2>
+<p><span class="slide-title">O Modelo Causal</span></p>
+<hr>
+</section>
+<section id="intervencoes-confractuais" class="slide level2" data-menu-title="Entendendo Intervenções e Confractuais">
+<h2></h2>
+<p><span class="slide-title">Entendendo Intervenções e Confractuais</span></p>
+<hr>
+</section>
+<section id="por-fim" class="slide level2" data-menu-title="Por fim, qual a diferença entre Inferencia Tradicional e a Inferência Causal?">
+<h2></h2>
+<p><span class="slide-title">Por fim, qual a diferença entre Inferencia Tradicional e a Inferência Causal?</span></p>
+<hr>
+</section>
+<section id="materias" class="slide level2" data-menu-title="Materiais">
+<h2></h2>
+<p><span class="slide-title">Materias</span></p>
+<hr>
+</section>
+<section id="agradecimentos" class="slide level2" data-menu-title="Agradecimentos">
+<h2></h2>
+<p><span class="slide-title">Agradecimentos?</span></p>
+<hr>
 <div class="footer footer-default">
 
 </div>
@@ -571,6 +769,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
