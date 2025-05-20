@@ -1,0 +1,45 @@
+---
+format:
+  revealjs:
+    slide-number: true
+    show-slide-number: print
+    theme: "bea_slide_theme.scss"
+    menu:
+      side: right
+      width: wide
+---
+
+## {#title-slide data-menu-title="Title Slide" background="#A5231C"}
+
+[Além da Correlação]{.custom-title}
+
+[*Uma introdução a Inferência Causal*]{.custom-subtitle}
+
+
+<hr style="border: 1px solid #d2e3f3;">
+
+:::: {.columns} 
+
+::: {.column width="50%"}
+[Beatriz Silveira]{.custom-subtitle3}<br>
+:::
+
+::: {.column width="50%"}
+[Universidade Federal do Espírito Santo]{.custom-subtitle3}<br>
+:::
+
+::::
+
+<br>
+
+::: {.title-footer}
+Slides disponíveis em [GitHub](https://github.com/vitoria-sesana/UFES2025-PNAD)
+
+:::
+
+
+---
+
+{{< include sections/0_topicos.qmd >}}
+
+---
