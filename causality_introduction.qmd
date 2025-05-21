@@ -9,17 +9,15 @@ format:
       width: wide
 ---
 
-## {#title-slide data-menu-title="Title Slide" background="#A5231C"}
+##  {#title-slide data-menu-title="Title Slide" background="#A5231C"}
 
 [Além da Correlação]{.custom-title}
 
 [*Uma introdução a Inferência Causal*]{.custom-subtitle}
 
-
 <hr style="border: 1px solid #d2e3f3;">
 
-:::: {.columns} 
-
+::: columns
 ::: {.column width="50%"}
 [Beatriz Lima Silveira]{.custom-subtitle3}<br>
 :::
@@ -27,45 +25,42 @@ format:
 ::: {.column width="50%"}
 [Universidade Federal do Espírito Santo]{.custom-subtitle3}<br>
 :::
-
-::::
+:::
 
 <br>
 
-::: {.title-footer}
+::: title-footer
 Slides disponíveis em [GitHub](https://github.com/beatriz-ls/causality_introduction)
-
 :::
 
-
----
+------------------------------------------------------------------------
 
 {{< include sections/0_topicos.qmd >}}
 
----
+------------------------------------------------------------------------
 
 {{< include sections/1_porque-estudar.qmd >}}
 
----
+------------------------------------------------------------------------
 
 {{< include sections/2_escada.qmd >}}
 
----
+------------------------------------------------------------------------
 
 {{< include sections/3_modelo.qmd >}}
 
----
+------------------------------------------------------------------------
 
 {{< include sections/4_intervencoes-confractuais.qmd >}}
 
----
+------------------------------------------------------------------------
 
 {{< include sections/5_por-fim.qmd >}}
 
----
+------------------------------------------------------------------------
 
 {{< include sections/6_materiais.qmd >}}
 
----
+------------------------------------------------------------------------
 
 {{< include sections/7_agradecimentos.qmd >}}
