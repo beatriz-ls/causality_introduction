@@ -15,3 +15,38 @@ format:
 [O Modelo Causal]{.slide-title}
 
 <hr>
+
+::: sanchez-font
+::: purple-text
+**Definimos**
+:::
+:::
+
+Determinar relações causais entre variáveis é essencial para determinar efeito de uma variável em outra.
+
+::: sanchez-font
+::: purple-text
+**Desafio**
+:::
+:::
+
+Representar essas relações formalmente (matemáticamente)
+
+::: sanchez-font
+::: purple-text
+**Resposta**
+:::
+:::
+
+Definir um Modelo Causal, definido por meio de **Modelos Probabilisticos em Grafos**
+
+---
+
+##  {#modelo-causal data-menu-title="O Modelo Causal"}
+
+[O Modelo Causal]{.slide-title}
+
+[O Paradoxo de Simpson]{.custom-subtitle2}
+
+<hr>
+

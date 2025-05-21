@@ -12,6 +12,6 @@ format:
 
 ##  {#materias data-menu-title="Materiais"}
 
-[Materias]{.slide-title}
+[Materiais]{.slide-title}
 
 <hr>
