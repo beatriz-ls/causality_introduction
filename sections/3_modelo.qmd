@@ -42,15 +42,15 @@ Definir um Modelo Causal, definido por meio de **Modelos Probabilisticos em Graf
 
 ------------------------------------------------------------------------
 
-##  {#modelo-causal data-menu-title="O Modelo Causal"}
+##  {data-menu-title="O Modelo Causal"}
 
 [O Modelo Causal]{.slide-title}
 
 [Grafo Direcionado Acíclico (DAG)]{.custom-subtitle2}
 
 <hr>
-::: body-text-s
 
+::: body-text-s
 ::: sanchez-font
 ::: red-text
 Definição
@@ -59,7 +59,7 @@ Definição
 
 Um DAG é um grafo direcionado tal que, para todo vértice, **V** , não é possível seguir setas partindo de **V** e voltar para **V**.
 
-- Representação causal: $V_1 \rightarrow V_2$ = "$V_1$ causa $V_2$"
+-   Representação causal: $V_1 \rightarrow V_2$ = "$V_1$ causa $V_2$"
 
 ::: sanchez-font
 ::: red-text
@@ -67,8 +67,7 @@ Lema
 :::
 :::
 
-O conjunto de pais de $\mathcal{V} \subseteq V$ em um DAG, $G = (V, \mathcal{E})$, é:
-$$
+O conjunto de pais de $\mathcal{V} \subseteq V$ em um DAG, $G = (V, \mathcal{E})$, é: $$
 Pa(\mathcal{V}) := \{V^* \in V : \exists V \in \mathcal{V} \text{ tal que } (V^*, V) \in \mathcal{E} }
 $$
 
@@ -78,8 +77,7 @@ Lema
 :::
 :::
 
-Em um DAG, $G = (V, E)$, o conjunto de ancestrais de $\mathcal{V} \subseteq V$, $\operatorname{Anc}(\mathcal{V})$, é tal que:
-$$
+Em um DAG, $G = (V, E)$, o conjunto de ancestrais de $\mathcal{V} \subseteq V$, $\operatorname{Anc}(\mathcal{V})$, é tal que: $$
 \operatorname{Anc}(\mathcal{V}) \subseteq V \quad \text{e} \quad V^* \in \operatorname{Anc}(\mathcal{V}) \text{ se e somente se}
 $$
 
@@ -87,7 +85,8 @@ $$
 \exists V \in \mathcal{V} \text{ e um caminho direcionado } C \text{ tal que } C_1 = V^* \text{ e } C_i = V.
 $$
 :::
----
+
+------------------------------------------------------------------------
 
 [O Modelo Causal]{.slide-title}
 
@@ -123,7 +122,7 @@ $$
 \int g_i(v_i, \mathrm{Pa}(v_i)) \, dv_i = 1 \quad \forall i
 $$
 
----
+------------------------------------------------------------------------
 
 [O Modelo Causal]{.slide-title}
 
@@ -131,12 +130,9 @@ $$
 
 <hr>
 
-::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
-::: {.panel-tabset}
-
+::: panel-tabset
 ### Output
 
 ```{r dag chain img, fig.width=5, fig.height=4, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE}
@@ -161,7 +157,7 @@ ggdag(grafo, layout = "circle") +
 
 ### Código
 
-```{r dag chain code,echo = TRUE, fig.show='hide', message=FALSE, warning=FALSE}
+```{r dag exemplo code,echo = TRUE, fig.show='hide', message=FALSE, warning=FALSE}
 library(dagitty)
 library(ggdag)
 library(ggplot2)
@@ -180,31 +176,27 @@ ggdag(grafo, layout = "circle") +
   xlab("") + ylab("")
 ```
 :::
-
 :::
 
 ::: {.column width="50%"}
-
 ::: sanchez-font
 ::: red-text
 Observações
 :::
 :::
 
-<div class="hr-red"></div>
-
-- $V_1$ é causa de $V_2$ que, por sua vez, é causa de $V_3$. Assim,
-$V_1$ é ancestral de $V_3$, isto é, o primeiro é a causa indireta do segundo;
-
-- $V_1$ e $V_3$ estão correlacionados, via $V_2$, na população;
-
-- $V_1$ e $V_3$ são independentes quando condicionados em $V_2$
-
-
+::: hr-red
 :::
 
+-   $V_1$ é causa de $V_2$ que, por sua vez, é causa de $V_3$. Assim, $V_1$ é ancestral de $V_3$, isto é, o primeiro é a causa indireta do segundo;
+
+-   $V_1$ e $V_3$ estão correlacionados, via $V_2$, na população;
+
+-   $V_1$ e $V_3$ são independentes quando condicionados em $V_2$
 :::
----
+:::
+
+------------------------------------------------------------------------
 
 [O Modelo Causal]{.slide-title}
 
@@ -212,12 +204,9 @@ $V_1$ é ancestral de $V_3$, isto é, o primeiro é a causa indireta do segundo;
 
 <hr>
 
-::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
-::: {.panel-tabset}
-
+::: panel-tabset
 ### Output
 
 ```{r dag confounder, fig.width=5, fig.height=4, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE}
@@ -261,33 +250,27 @@ ggdag(grafo, layout = "circle") +
   xlab("") + ylab("")
 ```
 :::
-
 :::
 
 ::: {.column width="50%"}
-
 ::: sanchez-font
 ::: red-text
 Observações
 :::
 :::
 
-<div class="hr-red"></div>
-
-
-- $V_1$ é uma causa comum a $V_2$ e a $V_3$;
-
-- $V_1$ e $V_3$ estão correlacionados, via $V_2$, na população;
-
-- $V_1$ e $V_3$ são independentes quando condicionados em $V_2$.
-
+::: hr-red
 :::
 
+-   $V_1$ é uma causa comum a $V_2$ e a $V_3$;
+
+-   $V_1$ e $V_3$ estão correlacionados, via $V_2$, na população;
+
+-   $V_1$ e $V_3$ são independentes quando condicionados em $V_2$.
+:::
 :::
 
-
-
----
+------------------------------------------------------------------------
 
 [O Modelo Causal]{.slide-title}
 
@@ -295,12 +278,9 @@ Observações
 
 <hr>
 
-::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
-::: {.panel-tabset}
-
+::: panel-tabset
 ### Output
 
 ```{r dag colisor img, fig.width=5, fig.height=4, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE}
@@ -344,25 +324,22 @@ ggdag(grafo, layout = "circle") +
   xlab("") + ylab("")
 ```
 :::
-
 :::
 
 ::: {.column width="50%"}
-
 ::: sanchez-font
 ::: red-text
 Observações
 :::
 :::
 
-<div class="hr-red"></div>
-
-- $V_1$ e $V_3$ são causas comum a $V_2$;
-
-- $V_1$ e $V_3$ são independentes na população;
-
-- $V_1$ e $V_3$ estão correlacionados quando condicionados em $V_2$.
-
+::: hr-red
 :::
 
+-   $V_1$ e $V_3$ são causas comum a $V_2$;
+
+-   $V_1$ e $V_3$ são independentes na população;
+
+-   $V_1$ e $V_3$ estão correlacionados quando condicionados em $V_2$.
+:::
 :::

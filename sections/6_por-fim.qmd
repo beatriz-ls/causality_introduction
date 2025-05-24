@@ -10,8 +10,9 @@ format:
     theme: "bea_slide_theme.scss"
 ---
 
-##  {#intervencoes-confractuais data-menu-title="Entendendo Intervenções e Confractuais"}
+##  {#por-fim data-menu-title="Por fim, qual a diferença entre Inferencia Tradicional e a Inferência Causal?"}
 
-[Entendendo Intervenções e Confractuais]{.slide-title}
+[Por fim, qual a diferença entre Inferencia Tradicional e a Inferência Causal?]{.slide-title}
 
 <hr>
+

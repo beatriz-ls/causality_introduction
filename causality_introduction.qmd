@@ -51,16 +51,16 @@ Slides disponíveis em [GitHub](https://github.com/beatriz-ls/causality_introduc
 
 ------------------------------------------------------------------------
 
-{{< include sections/4_intervencoes-confractuais.qmd >}}
+{{< include sections/4_intervencoes.qmd >}}
 
 ------------------------------------------------------------------------
 
-{{< include sections/5_por-fim.qmd >}}
+{{< include sections/5_contrafactuais.qmd >}}
 
 ------------------------------------------------------------------------
 
-{{< include sections/6_materiais.qmd >}}
+{{< include sections/6_por-fim.qmd >}}
 
 ------------------------------------------------------------------------
 
-{{< include sections/7_agradecimentos.qmd >}}
+{{< include sections/7_materiais.qmd >}}

@@ -10,8 +10,8 @@ format:
     theme: "bea_slide_theme.scss"
 ---
 
-##  {#agradecimentos data-menu-title="Agradecimentos"}
+##  {#contrafactuais data-menu-title="Contrafactuais"}
 
-[Agradecimentos?]{.slide-title}
+[Entendendo Contrafactuais]{.slide-title}
 
 <hr>
