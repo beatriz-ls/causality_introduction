@@ -98,13 +98,26 @@ Qual é a probabilidade de que um indivíduo selecionado aleatoriamente da popul
 :::
 :::
 
-- Corresponde: $$P(C \mid T)$$
+::: body-text-s
+- Corresponde: $f(C \mid T)$
 
 - Capta:
 
-    - Efeito direto: $$C -> T$$
+    - Efeito direto: $C \rightarrow T$;
+    - Efeito indireto via **Z** (Confundidor);
+- Calculando:
 
-
+$$
+\begin{equation}
+\begin{aligned}
+f(c|t) &= \sum_{z} f(z, c|t) \\
+&= \sum_{z} \frac{f(z, c, t)}{f(z)} \\
+&= \sum_{z} \frac{f(z, c)f(c|z, t)}{f(t)} \\
+&= \sum_{z} f(z|t)f(c|z, t)
+\end{aligned}
+\end{equation}
+$$
+:::
 ---
 
 [Entendendo Intervenções]{.slide-title}
@@ -119,6 +132,16 @@ Qual a probabilidade de que um indivíduo selecionado aleatoriamente da populaç
 :::
 :::
 
+::: body-text-s
+- Corresponde: $f(C \mid do(T))$
+
+- Ignora: $Z \rightarrow T$
+- Calculando:
+
+$$
+f(c \mid do(t)) = \sum_{z} f(z) f(c \mid z, t)
+$$
+
 ---
 
 [Entendendo Intervenções]{.slide-title}
@@ -127,7 +150,42 @@ Qual a probabilidade de que um indivíduo selecionado aleatoriamente da populaç
 
 <hr>
 
-colocar exemplos para os três cenários de intervenção
+::: columns
+::: {.column width="50%"}
+::: panel-tabset
+### Output
+
+```{r dag intevention 1 img, fig.width=5, fig.height=4, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE}
+x <- 10
+
+x
+
+```
+
+### Código
+
+```{r dag intevention 2 code,echo = TRUE, fig.show='hide', message=FALSE, warning=FALSE}
+x <- 10
+
+x
+```
+:::
+:::
+
+::: {.column width="50%"}
+::: sanchez-font
+::: red-text
+Observações
+:::
+:::
+
+::: hr-red
+:::
+
+texto texto
+:::
+:::
+
 
 
 

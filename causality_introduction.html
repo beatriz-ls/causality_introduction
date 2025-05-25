@@ -932,13 +932,27 @@ f(v_1, \dots, v_n) = \prod_{i=1}^{n} g_i(v_i, \mathrm{Pa}(v_i)), \quad \text{e}
 <p>Qual é a probabilidade de que um indivíduo selecionado aleatoriamente da população se cure dado que <strong>observamos</strong> que recebeu o tratamento?</p>
 </div>
 </div>
+<div class="body-text-s">
 <ul>
-<li><p>Corresponde: <span class="math display">\[P(C \mid T)\]</span></p></li>
+<li><p>Corresponde: <span class="math inline">\(f(C \mid T)\)</span></p></li>
 <li><p>Capta:</p>
 <ul>
-<li>Efeito direto: <span class="math display">\[C -&gt; T\]</span></li>
+<li>Efeito direto: <span class="math inline">\(C \rightarrow T\)</span>;</li>
+<li>Efeito indireto via <strong>Z</strong> (Confundidor);</li>
 </ul></li>
+<li><p>Calculando:</p></li>
 </ul>
+<p><span class="math display">\[
+\begin{equation}
+\begin{aligned}
+f(c|t) &amp;= \sum_{z} f(z, c|t) \\
+&amp;= \sum_{z} \frac{f(z, c, t)}{f(z)} \\
+&amp;= \sum_{z} \frac{f(z, c)f(c|z, t)}{f(t)} \\
+&amp;= \sum_{z} f(z|t)f(c|z, t)
+\end{aligned}
+\end{equation}
+\]</span></p>
+</div>
 </section>
 <section class="slide level2">
 
@@ -950,28 +964,165 @@ f(v_1, \dots, v_n) = \prod_{i=1}^{n} g_i(v_i, \mathrm{Pa}(v_i)), \quad \text{e}
 <p>Qual a probabilidade de que um indivíduo selecionado aleatoriamente da população se cure dado que <strong>prescrevemos</strong> a ele o tratamento?</p>
 </div>
 </div>
+<p>::: body-text-s - Corresponde: <span class="math inline">\(f(C \mid do(T))\)</span></p>
+<ul>
+<li>Ignora: <span class="math inline">\(Z \rightarrow T\)</span></li>
+<li>Calculando:</li>
+</ul>
+<p><span class="math display">\[
+f(c \mid do(t)) = \sum_{z} f(z) f(c \mid z, t)
+\]</span></p>
 </section>
 <section class="slide level2">
 
 <p><span class="slide-title">Entendendo Intervenções</span></p>
 <p><span class="custom-subtitle2">Generalização do Conceito</span></p>
 <hr>
-<p>colocar exemplos para os três cenários de intervenção</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Output</a></li><li><a href="#tabset-5-2">Código</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-5-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="sanchez-font">
+<div class="red-text">
+<p>Observações</p>
+</div>
+</div>
+<div class="hr-red">
+
+</div>
+<p>texto texto</p>
+</div>
+</div>
 </section>
-<section id="agradecimentos" class="slide level2" data-menu-title="Agradecimentos">
+<section id="contrafactuais" class="slide level2" data-menu-title="Contrafactuais">
 <h2></h2>
-<p><span class="slide-title">Agradecimentos?</span></p>
+<p><span class="slide-title">Introduzindo Contrafactuais</span></p>
+<p><span class="custom-subtitle2">Indagações Contrafactuais</span></p>
 <hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">Output</a></li><li><a href="#tabset-6-2">Código</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="causality_introduction_files/figure-revealjs/dag%20contrafactuais%20img-1.png" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-6-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">library</span>(dagitty)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">library</span>(ggdag)</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co"># Construindo o Grafo</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>grafo <span class="ot">&lt;-</span> <span class="fu">dagitty</span>(<span class="st">"dag {</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="st">T -&gt; C</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="st">Z -&gt; C</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="st">Z -&gt; T</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="st">}"</span>)</span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="co"># Exibir a figura do grafo</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="fu">ggdag</span>(grafo, <span class="at">layout =</span> <span class="st">"circle"</span>) <span class="sc">+</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb8-14"><a href="#cb8-14"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb8-15"><a href="#cb8-15"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb8-16"><a href="#cb8-16"></a>        <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb8-17"><a href="#cb8-17"></a>  <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="vertical-center">
+<div class="sanchez-font">
+<div class="red-text">
+<p>Entre as pessoas tratadas e curadas, seria mais comum curar ou não curar caso elas não tivessem sido tratadas?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="por-fim" class="slide level2" data-menu-title="Por fim, qual a diferença entre Inferencia Tradicional e a Inferência Causal?">
+<section id="contrafactuais" class="slide level2" data-menu-title="Contrafactuais">
 <h2></h2>
-<p><span class="slide-title">Por fim, qual a diferença entre Inferencia Tradicional e a Inferência Causal?</span></p>
+<p><span class="slide-title">Introduzindo Contrafactuais</span></p>
+<p><span class="custom-subtitle2">Raciocinio Contrafactual vs Raciocinio Intervencional</span></p>
 <hr>
+<div class="vertical-center">
+<div class="sanchez-font">
+<p>Contrafactual:</p>
+<div class="red-text">
+<p>Entre as pessoas tratadas e curadas, seria mais comum curar ou não curar caso elas não tivessem sido tratadas?</p>
+</div>
+<p>Intervenção:</p>
+<div class="red-text">
+<p>Entre pessoas tratadas, seria mais comum curar ou não curar?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="hierarquia" class="slide level2" data-menu-title="Hierarquia de informação">
+<h2></h2>
+<p><span class="slide-title">Hierarquia da Informação</span></p>
+<hr>
+<ul>
+<li><strong>Raciocinio Associativo</strong>: Redes bayesianas</li>
+<li><strong>Raciocinio Intervencional</strong>: Redes causais bayesianas</li>
+<li><strong>Raciocinio Contrafactual</strong>: Modelos causais estuturais.</li>
+</ul>
 </section>
 <section id="materias" class="slide level2" data-menu-title="Materiais">
 <h2></h2>
 <p><span class="slide-title">Materiais</span></p>
 <hr>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img\book_of_why.jpg" style="width:70.0%"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img\causal_book.jpg" style="width:70.0%"></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p><span class="slide-title">Materiais</span></p>
+<hr>
+
+<img data-src="img\causal_inference_in_r.png" style="width:70.0%" class="r-stretch"><p><a href="https://www.r-causal.org/">Link</a></p>
+</section>
+<section id="referencias" class="slide level2" data-menu-title="Referências">
+<h2></h2>
+<p><span class="slide-title">Referências</span></p>
+<hr>
+<p><strong><em>STERN, R. B.</em></strong> <em>Causality Book</em>. [S.l.]: GitHub, 2024. Disponível em: <a href="https://github.com/rbstern/causality_book/blob/master/book.pdf" class="uri">https://github.com/rbstern/causality_book/blob/master/book.pdf</a>. Acesso em: 25 maio 2025.</p>
+<p><strong><em>PEARL, Judea; GLYMOUR, Madelyn; JEWELL, Nicholas P.</em></strong> <em>Causal inference in statistics: a primer</em>. Chichester: Wiley, 2016.</p>
 <div class="footer footer-default">
 
 </div>
