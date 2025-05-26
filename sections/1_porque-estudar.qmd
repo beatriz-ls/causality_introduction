@@ -142,17 +142,13 @@ Conflito nas Conclusões
 
 *Z*: Indicadora de que o paciente é homem
 
-Mais homens receberam o tratamento
+- Observação: Mais homens receberam o tratamento
 
-Suposição: sexo não é afetado pelo tratamento
+- Comparação agregada: Homens tratados × Mulheres não tratadas
 
-Comparação agregada:
+- Pode se assumir que, independente do tratamento, mulheres têm maior chance de recuperação.
 
-Homens tratados × Mulheres não tratadas
-
-Mulheres têm maior chance de recuperação
-
-Taxa de recuperação menor no grupo tratado é explicada pelo sexo
+- Taxa de recuperação menor no grupo tratado é explicada pelo sexo
 
 📌 Conclusão: Tratamento parece efetivo quando estratificamos por sexo.
 :::
@@ -162,17 +158,13 @@ Taxa de recuperação menor no grupo tratado é explicada pelo sexo
 
 -   Z: Indicadora de que o paciente tem pressão elevada
 
--   Tratamento aumenta a pressão como efeito colateral
+-   Sabemos que: Tratamento aumenta a pressão como efeito colateral
 
 -   Mais pacientes com pressão alta estão no grupo tratado
 
--   Comparações dentro dos grupos de pressão:
+-   Comparações dentro dos grupos de pressão: Tratamento parece benéfico porque não há como captar o efeito colateral dentro de cada grupo. Só é captado o pequeno efeito positivo.
 
--   Tratamento parece benéfico
-
-Mas na análise agregada:
-
-Frequência de recuperação é maior sem tratamento
+- Análise agregada: Frequência de recuperação é maior sem tratamento
 
 📌 Conclusão: Tratamento parece ineficiente devido ao efeito colateral.
 :::

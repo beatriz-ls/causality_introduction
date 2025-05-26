@@ -20,9 +20,9 @@ format:
 -   Porque estudar Inferência Causal?
 -   A Escada da Causalidade
 -   O Modelo Causal
--   Entendendo Intervenções e Contrafactuais
--   Por fim, qual a diferença entre Inferencia Tradicional e a Inferência Causal?
+-   Entendendo Intervenções
+-   Entendendo Contrafactuais
+-   Hierarquia da informação
 -   Materiais de estudo notórios
 -   Referências
--   Agradecimentos
 :::

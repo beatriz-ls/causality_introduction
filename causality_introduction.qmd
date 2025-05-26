@@ -13,7 +13,7 @@ format:
 
 [Além da Correlação]{.custom-title}
 
-[*Uma introdução a Inferência Causal*]{.custom-subtitle}
+[*Uma introdução à Inferência Causal*]{.custom-subtitle}
 
 <hr style="border: 1px solid #d2e3f3;">
 

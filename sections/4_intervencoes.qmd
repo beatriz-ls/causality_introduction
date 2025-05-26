@@ -78,13 +78,13 @@ Observações
 ::: hr-red
 :::
 
-- Z é uma causa tanto de T quanto de C;
+-   Z é uma causa tanto de T quanto de C;
 
-- T é uma causa de C
+-   T é uma causa de C
 :::
 :::
 
----
+------------------------------------------------------------------------
 
 [Entendendo Intervenções]{.slide-title}
 
@@ -99,13 +99,14 @@ Qual é a probabilidade de que um indivíduo selecionado aleatoriamente da popul
 :::
 
 ::: body-text-s
-- Corresponde: $f(C \mid T)$
+-   Corresponde: $f(C \mid T)$
 
-- Capta:
+-   Capta:
 
-    - Efeito direto: $C \rightarrow T$;
-    - Efeito indireto via **Z** (Confundidor);
-- Calculando:
+    -   Efeito direto: $C \rightarrow T$;
+    -   Efeito indireto via **Z** (Confundidor);
+
+-   Calculando:
 
 $$
 \begin{equation}
@@ -118,7 +119,8 @@ f(c|t) &= \sum_{z} f(z, c|t) \\
 \end{equation}
 $$
 :::
----
+
+------------------------------------------------------------------------
 
 [Entendendo Intervenções]{.slide-title}
 
@@ -132,62 +134,11 @@ Qual a probabilidade de que um indivíduo selecionado aleatoriamente da populaç
 :::
 :::
 
-::: body-text-s
-- Corresponde: $f(C \mid do(T))$
 
-- Ignora: $Z \rightarrow T$
-- Calculando:
+-   Ignora: $Z \rightarrow T$
+-   Calculando:
 
 $$
 f(c \mid do(t)) = \sum_{z} f(z) f(c \mid z, t)
 $$
-
----
-
-[Entendendo Intervenções]{.slide-title}
-
-[Generalização do Conceito]{.custom-subtitle2}
-
-<hr>
-
-::: columns
-::: {.column width="50%"}
-::: panel-tabset
-### Output
-
-```{r dag intevention 1 img, fig.width=5, fig.height=4, fig.align='center', echo=FALSE, message=FALSE, warning=FALSE}
-x <- 10
-
-x
-
-```
-
-### Código
-
-```{r dag intevention 2 code,echo = TRUE, fig.show='hide', message=FALSE, warning=FALSE}
-x <- 10
-
-x
-```
-:::
-:::
-
-::: {.column width="50%"}
-::: sanchez-font
-::: red-text
-Observações
-:::
-:::
-
-::: hr-red
-:::
-
-texto texto
-:::
-:::
-
-
-
-
-
 

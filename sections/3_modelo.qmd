@@ -67,8 +67,9 @@ Lema
 :::
 :::
 
-O conjunto de pais de $\mathcal{V} \subseteq V$ em um DAG, $G = (V, \mathcal{E})$, é: $$
-Pa(\mathcal{V}) := \{V^* \in V : \exists V \in \mathcal{V} \text{ tal que } (V^*, V) \in \mathcal{E} }
+O conjunto de pais de $\mathcal{V} \subseteq V$ em um DAG, $G = (V, \mathcal{E})$, é:
+$$
+Pa(\mathcal{V}) := \{V^* \in V : \exists V \in \mathcal{V} \text{ tal que } (V^*, V) \in \mathcal{E}\}
 $$
 
 ::: sanchez-font
@@ -77,7 +78,8 @@ Lema
 :::
 :::
 
-Em um DAG, $G = (V, E)$, o conjunto de ancestrais de $\mathcal{V} \subseteq V$, $\operatorname{Anc}(\mathcal{V})$, é tal que: $$
+Em um DAG, $G = (V, E)$, o conjunto de ancestrais de $\mathcal{V} \subseteq V$, $\operatorname{Anc}(\mathcal{V})$, é tal que: 
+$$
 \operatorname{Anc}(\mathcal{V}) \subseteq V \quad \text{e} \quad V^* \in \operatorname{Anc}(\mathcal{V}) \text{ se e somente se}
 $$
 
@@ -264,9 +266,9 @@ Observações
 
 -   $V_1$ é uma causa comum a $V_2$ e a $V_3$;
 
--   $V_1$ e $V_3$ estão correlacionados, via $V_2$, na população;
+-   $V_2$ e $V_3$ estão correlacionados, via $V_1$, na população;
 
--   $V_1$ e $V_3$ são independentes quando condicionados em $V_2$.
+-   $V_2$ e $V_3$ são independentes quando condicionados em $V_1$.
 :::
 :::
 
